@@ -1,0 +1,22 @@
+<h1><%= @email_template.name %></h1>
+<p>Parameters available:</p>
+<ul>
+    <% @email_template.email_template_parameters.each do |param| %>
+        <li><%= "{{#{param.name}}}: #{param.description} - looks like [#{param.example}]" %></li>
+    <% end %>
+</ul>
+<div id='template-preview'>
+<pre>
+</pre>
+</div>
+<%= form_for @email_template do |f| %>
+  <%= f.hidden_field :id %>
+  Subject: <%= f.text_field :subject, size: 60 %><br /><br />
+  Body : <%= f.text_area :body, cols: 60, rows: 20 %><br /><br />
+
+  <%= f.submit 'Save', class: 'ui-button ui-widget ui-corner-all' %>
+  <button type="button" class="ui-button ui-widget ui-corner-all" onclick="updatePreview()">Validate and Preview</button>
+  <%= link_to 'Cancel', email_templates_path, class: 'ui-button ui-widget ui-corner-all' %>
+<% end %>
+<br>
+

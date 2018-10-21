@@ -1,0 +1,15 @@
+<h1>Appointments</h1> 
+<%= button_to "Admin Export", { :controller => "appointments", :action => "export"}, class: 'ui-button ui-widget ui-corner-all' %>
+<br>
+<div>
+    <% @appointments.each do |appt| %>
+        <%= appt.display %> <%= link_to 'Cancel', appt, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui-button ui-widget ui-corner-all' %> <br>
+    <% end %>
+</div>
+
+<h2>Create a new appointment</h2>
+<%= form_for @appointment, :url => { :action => "create" } do |f| %>
+<p>User: <%= f.select "user_id", options_from_collection_for_select(@users, "id", "name") %> </p> 
+<p>Appointment Time: <%= f.datetime_select("time", :default => { :minute => 00 }) %> </p> 
+<%= f.submit "Book", class: 'ui-button ui-widget ui-corner-all' %>
+<% end %>

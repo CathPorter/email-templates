@@ -1,0 +1,7 @@
+<h1><%= @email_template.name %></h1> 
+
+<p>Subject: <%= @email_template.subject %><p> 
+<p>Body: <%= @email_template.body %><p>  
+
+<p>Preview: <pre><%= @email_template.preview %></pre><p> 
+<%= link_to 'Return', email_templates_path, class: 'ui-button ui-widget ui-corner-all' %>

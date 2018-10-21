@@ -1,0 +1,19 @@
+<h1>Email Templates</h1> 
+
+<table width='80%'>
+<thead>
+    <th>Name</th>
+    <th>Subject</th> 
+    <th>&nbsp;</th>
+    <th>&nbsp;</th>
+</thead>
+<tbody>
+    <% @email_templates.each do |template| %>
+    <tr>
+        <td><%= template.name %></td>
+        <td><%= template.subject %></td> 
+        <td><%= link_to "Show", email_template_path(template), class: 'ui-button ui-widget ui-corner-all'  %></td>
+        <td><%= link_to "Edit", edit_email_template_path(template), class: 'ui-button ui-widget ui-corner-all'  %></td>
+    <% end %>
+</tbody>
+</table>
