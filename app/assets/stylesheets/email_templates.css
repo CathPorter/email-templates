@@ -1,3 +1,23 @@
+#header-menu {
+    padding: 20px 20px 0 20px;
+}
+
+#header-menu a {
+    margin-right: 10px;
+}
+
+.ui-widget {
+    font-size: 0.9em;
+}
+
+#content {
+    padding: 20px;
+}
+
+#content table th {
+    text-align: left;
+}
+
 #template-preview {
     width: 400px;
     float: right;
@@ -10,3 +30,23 @@ pre {
     white-space: -o-pre-wrap;    /* Opera 7 */
     word-wrap: break-word;       /* Internet Explorer 5.5+ */
    }
+
+.ui-menu ul {
+    padding-inline-start: 20px;
+}
+
+.ui-menu li {
+    display: inline-block;
+}
+
+.ui-menu li a {
+    text-decoration: none;
+}
+
+.ui-menu li.ui-active {
+    background: none;
+    background-color: lightblue;
+}
+
+/* open in new window indicator */
+a[target='_blank']::after {content: '...';}

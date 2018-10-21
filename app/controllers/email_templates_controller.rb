@@ -1,6 +1,8 @@
 class EmailTemplatesController < ApplicationController
     def index
         @email_templates = EmailTemplate.all
+
+        @templates_active = "ui-active"
     end
 
     def show

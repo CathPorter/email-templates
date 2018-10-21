@@ -3,7 +3,9 @@ class AppointmentsController < ApplicationController
         @appointments = Appointment.all 
         @users = User.all  
         @appointment = Appointment.new
-        @appointment.time = (DateTime.now + 2.days).beginning_of_hour        
+        @appointment.time = (DateTime.now + 2.days).beginning_of_hour    
+        
+        @appts_active = "ui-active"
     end
 
     def create

@@ -35,6 +35,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Templating engine
 gem 'liquid', '~> 4.0', '>= 4.0.1'
 
+# https://github.com/Envek/jquery-datetimepicker-rails
+source 'https://rails-assets.org' do
+  gem 'rails-assets-datetimepicker'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails', '~> 4.11', '>= 4.11.1'
