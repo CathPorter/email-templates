@@ -5,22 +5,25 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %> 
-
     <%= javascript_include_tag "https://code.jquery.com/jquery-3.3.1.min.js" %>
     <%= javascript_include_tag "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" %>
     <%= javascript_include_tag 'application' %>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <%= stylesheet_link_tag    'https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css', media: 'screen' %>
-
+    <%= stylesheet_link_tag    'application', media: 'all' %> 
   </head>
 
   <body>
-    <div>
-    <%= link_to "Appointments", appointments_path %>
-    <%= link_to "Templates", email_templates_path %>
-    <%= link_to "Emails", '/letter_opener', target: '_blank' %>
+    <div class='ui-menu'>
+    <ul>
+    <li class="ui-button ui-widget <%= @appts_active %>"><span class="far fa-calendar"></span> <%= link_to "Appointments", appointments_path %></li>
+    <li class="ui-button ui-widget <%= @templates_active %>"><span class="far fa-edit"></span> <%= link_to "Templates", email_templates_path %></li>
+    <li class="ui-button ui-widget"><span class="far fa-envelope"></span> <%= link_to "Emails", '/letter_opener', target: '_blank' %></li>
+    </ul>
     </div>
+    <div id='content'>
     <%= yield %>
+    </div>
   </body>
 </html>
