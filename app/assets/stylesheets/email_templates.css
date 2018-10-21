@@ -49,4 +49,4 @@ pre {
 }
 
 /* open in new window indicator */
-a[target='_blank']::after {content: ' ↗️';}
+a[target='_blank']::after {content: '...';}

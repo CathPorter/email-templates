@@ -9,6 +9,6 @@
 <h2>Create a new appointment</h2>
 <%= form_for @appointment, :url => { :action => "create" } do |f| %>
 <p>User: <%= f.select "user_id", options_from_collection_for_select(@users, "id", "name") %> </p> 
-<p>Appointment Time: <%= f.datetime_select("time", :default => { :minute => 00 }) %> </p> 
+<p>Appointment Time: <%= f.text_field "time", class: "datetimepicker" %></p>
 <%= f.submit "Book", class: 'ui-button ui-widget ui-corner-all' %>
 <% end %>

@@ -1,3 +1,11 @@
+$( document ).ready(function() {
+    $('.datetimepicker').datetimepicker({
+        format: 'm/d/Y H:i',
+        inline: false
+      });
+    $('.datetimepicker').val("").change(); // Force initial reformat of date
+});
+
 function updatePreview() {
     var template_id = $('#email_template_id').val();
     var template_text = $('#email_template_body').val();
